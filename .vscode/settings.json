@@ -53,5 +53,11 @@
   "C_Cpp_Runner.useAddressSanitizer": false,
   "C_Cpp_Runner.useUndefinedSanitizer": false,
   "C_Cpp_Runner.useLeakSanitizer": false,
-  "C_Cpp_Runner.showCompilationTime": false
+  "C_Cpp_Runner.showCompilationTime": false,
+  "files.associations": {
+    "array": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "iostream": "cpp"
+  }
 }

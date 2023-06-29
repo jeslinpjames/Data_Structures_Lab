@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-int* read_arr(int arr[], int n)
-{
+int* read_arr( int n)
+{   int *arr = new int[n];
     cout<<"Enter the Elements : ";
     for(int i=0;i<n;i++)
     cin>>arr[i];
@@ -65,7 +65,7 @@ int main(){
                 cout<<"Enter the size of the array : ";
                 cin>>n;
                 arr = new int [n];
-                arr = read_arr(arr,n);
+                arr = read_arr(n);
                 break;
             }
             case 2:
