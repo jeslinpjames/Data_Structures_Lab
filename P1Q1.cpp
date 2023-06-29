@@ -11,6 +11,8 @@ int main(){
     cout<<"Enter the value of N : ";
     cin>>n;
     cout<<"Factorial of "<<n<<" is "<<factorial(n)<<endl;
-    return 0;
+    return 0; 
 }
 
+// Enter the value of N : 6
+// Factorial of 6 is 720
