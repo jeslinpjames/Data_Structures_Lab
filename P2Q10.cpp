@@ -25,16 +25,16 @@ class Mat {
   void accept_elements(void);
   int max(int ar[],int size);
 };
-int* Mat::row_sum() {
+int* Mat::column_sum() {
     int * S = new int [r];
     for (int i=0;i<r; i++){
         for(int j =0;j<c;j++){
-            S[i]=S[i]+a[i][j];
+            S[i]=S[i]+a[j][i];
         }
     }
     return S;  
 }
-int* Mat::column_sum() {
+int* Mat::row_sum() {
     int * S = new int [c];
     for (int i=0;i<c; i++){
         for(int j =0;j<r;j++){
@@ -68,8 +68,8 @@ int main() {
   ob1.accept_elements();
   int *C_Sum = new int [c];
   int *R_Sum = new int [r];
-  C_Sum = ob1.column_sum();
   R_Sum = ob1.row_sum();
+  C_Sum = ob1.column_sum();
   int max_column = ob1.max(C_Sum,c);
   int max_row = ob1.max(R_Sum,r);
   cout<<"The column number with maximum sum is : "<<max_column+1<<endl;
