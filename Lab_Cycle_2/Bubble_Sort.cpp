@@ -50,10 +50,15 @@ void Bubble_Sort:: sort(){
 int main(){
     Bubble_Sort ob;
     ob.input();
-    cout<<"Array is : ";
-    ob.display();
     ob.sort();
     cout<<"Sorted Array is : ";
     ob.display();
     return 0;
 }
+
+
+
+// OUTPUT 
+// Enter the number of elements in the array : 8
+// Enter the Elements of the Array : 623.43 82.412 534.612 137.6 -733.216 28.16 363.532 8.34423
+// Sorted Array is : -733.216 8.34423 28.16 82.412 137.6 363.532 534.612 623.43

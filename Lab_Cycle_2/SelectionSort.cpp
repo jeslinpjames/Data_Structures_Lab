@@ -15,7 +15,7 @@ class SelectionSort{
     }
 };
 void SelectionSort:: input(){
-    cout<<"Enter the numbe of words : ";
+    cout<<"Enter the number of words : ";
     cin>>n;
     s= new string[n];
     cout<<"Enter the Elements of the Array : ";
@@ -47,11 +47,14 @@ void SelectionSort::sort(){
 int main(){
     SelectionSort ob;
     ob.input();
-    cout<<"Array is : ";
-    ob.display();
     ob.sort();
     cout<<"Sorted Array is : ";
     ob.display();
     return 0;
 }
 
+
+// OUTPUT
+// Enter the number of words : 9
+// Enter the Elements of the Array : one picture is worth more than ten thousand words
+// Sorted Array is : is more one picture ten than thousand words worth
