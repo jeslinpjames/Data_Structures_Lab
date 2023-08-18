@@ -23,6 +23,7 @@ class SingleLinkedList{
     void insertFirst(int val);
     void insertLast(int val);
     void insert(int val,int k);
+    int search(int val);
     void display();
 };
 void SingleLinkedList :: insertFirst(int val){
@@ -65,6 +66,24 @@ void SingleLinkedList:: insert(int val, int k){
     temp->next=node;
     size++;
 }
+int SingleLinkedList :: search(int val){
+    int position = 0;
+    bool found = false;
+    Node* temp = Head;
+    while(temp!=nullptr){
+        if(temp->data==val){
+            found=true;
+            break;
+        }
+        position++;
+        temp=temp->next;
+    }
+    if(!found){
+        cout<<"NOT FOUND"<<endl;
+        return -1;
+    }
+    return position;
+}
 void SingleLinkedList::display(){
     Node* temp = Head;
     while(temp!=nullptr){
@@ -85,5 +104,9 @@ int main(){
     l1.insertLast(96);
     l1.insert(11,9);
     l1.display();
+    int x= l1.search(76);
+    if(x!=-1){
+        cout<<"The Position of the element is "<<x<<endl;
+    }
     return 0;
 }
