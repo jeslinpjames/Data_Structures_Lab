@@ -21,6 +21,8 @@ class SingleLinkedList{
     int size;
     SingleLinkedList() : size(0), Head(nullptr), Tail(nullptr) {}
     void insertFirst(int val);
+    void insertLast(int val);
+    void insert(int val,int k);
     void display();
 };
 void SingleLinkedList :: insertFirst(int val){
@@ -30,6 +32,37 @@ void SingleLinkedList :: insertFirst(int val){
     if(Tail==nullptr){
         Tail= Head;
     }
+    size++;
+}
+void SingleLinkedList::insertLast(int val){
+    if (Tail==nullptr){
+        insertFirst(val);
+        return;
+    }
+    Node* node = new Node(val);
+    Tail->next=node;
+    Tail= node;
+    size++;
+}
+void SingleLinkedList:: insert(int val, int k){
+    if(k==0){
+        insertFirst(val);
+        return;
+    }
+    if(k==size){
+        insertLast(val);
+        return;
+    }
+    if(k>size){
+        cout<<"Key is greater than the size of the Linked List!"<<endl;
+        return;
+    }
+    Node* temp = Head;
+    for(int i=1;i<k;i++){
+        temp=temp->next;
+    }
+    Node* node = new Node(val,temp->next);
+    temp->next=node;
     size++;
 }
 void SingleLinkedList::display(){
@@ -48,6 +81,9 @@ int main(){
     l1.insertFirst(68);
     l1.insertFirst(13);
     l1.insertFirst(121);
+    l1.insertLast(69);
+    l1.insertLast(96);
+    l1.insert(11,9);
     l1.display();
     return 0;
 }
