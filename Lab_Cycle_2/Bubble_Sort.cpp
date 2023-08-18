@@ -43,7 +43,7 @@ void Bubble_Sort:: sort(){
                 swap = true;
             }
         }
-        if(swap==false)
+        if(swap==false) 
                 break;
     }
 }
