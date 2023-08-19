@@ -24,6 +24,8 @@ class SingleLinkedList{
     void insertLast(int val);
     void insert(int val,int k);
     int search(int val);
+    int count_duplicates(int val);
+    void remove_duplicates(int val);
     void display();
 };
 void SingleLinkedList :: insertFirst(int val){
@@ -84,6 +86,50 @@ int SingleLinkedList :: search(int val){
     }
     return position;
 }
+int SingleLinkedList:: count_duplicates(int val){
+    int position =0;
+    int count=0;
+    bool not_found=true;
+    Node* temp = Head;
+    while(temp!=nullptr){
+        if(temp->data==val){
+            count++;
+            not_found=false;
+        }
+        position++;
+        temp=temp->next;
+    }
+    if(not_found){
+        cout<<"Key not in the Linked List"<<endl;
+    }else {
+        cout << "Number of duplicates for key " << val << ": " << count << endl;
+    }
+    return count;
+}
+void SingleLinkedList::remove_duplicates(int val){
+    bool not_found =true;
+    Node* prev = nullptr;
+    Node* current = Head;
+    while(current!=nullptr){
+        if(current->data==val){
+            if(prev!=nullptr){
+                prev->next=current->next;
+                delete current;
+                current=prev->next;
+                size--;
+            }else{
+                Node* temp = current;
+                current = current->next;
+                Head = current;
+                delete temp;
+                size--;
+            }
+        }else{
+            prev=current;
+            current=current->next;
+        }
+    }
+}
 void SingleLinkedList::display(){
     Node* temp = Head;
     while(temp!=nullptr){
@@ -102,11 +148,15 @@ int main(){
     l1.insertFirst(121);
     l1.insertLast(69);
     l1.insertLast(96);
-    l1.insert(11,9);
+    l1.insert(11,7);
+    l1.insertFirst(69);
     l1.display();
     int x= l1.search(76);
     if(x!=-1){
         cout<<"The Position of the element is "<<x<<endl;
     }
+    int x1=l1.count_duplicates(69);
+    l1.remove_duplicates(69);
+    l1.display();
     return 0;
 }
