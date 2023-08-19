@@ -78,10 +78,10 @@ class Alternative{
         LinkedList oddList;
         LinkedList evenList;
     public: 
-        void alternativeSplicling(LinkedList Lst);   
+        Alternative(LinkedList Lst);
         void displayLists(); 
 };
-void Alternative::alternativeSplicling(LinkedList Lst){ 
+Alternative::Alternative(LinkedList Lst){ 
     Node* current = Lst.Head;
     int count=0;
     while(current!=nullptr){
@@ -111,8 +111,7 @@ int main(){
         cin>>val;
         Lst.insertLast(val);
     }
-    Alternative Alt;
-    Alt.alternativeSplicling(Lst);
+    Alternative Alt(Lst);    
     Alt.displayLists();    
     return 0;
 }
