@@ -98,7 +98,7 @@ int SingleLinkedList :: search(int val){
 }
 int SingleLinkedList:: count_duplicates(int val){
     int position =0;
-    int count=0;
+    int count=-1;
     bool not_found=true;
     Node* temp = Head;
     while(temp!=nullptr){
@@ -155,24 +155,70 @@ void SingleLinkedList::display(){
     cout<<" END"<<endl;
 }
 int main(){
-    SingleLinkedList l1;
-    l1.insertFirst(10);
-    l1.insertFirst(76);
-    l1.insertFirst(86);
-    l1.insertFirst(68);
-    l1.insertFirst(13);
-    l1.insertFirst(121);
-    l1.insertLast(69);
-    l1.insertLast(96);
-    l1.insert_pos(11,7);
-    l1.insertFirst(69);
-    l1.display();
-    int x= l1.search(69);
-    if(x!=-1){
-        cout<<"The Position of the element is "<<x<<endl;
+
+    cout<<"Enter the number of Elements in the Linked List : ";
+    int n=0;
+    cin>> n;
+    cout<<"Enter the Elements of the List seperated by space : ";
+    int val;
+    SingleLinkedList Lst;
+    for(int i=0;i<n;i++){
+        cin>>val;
+        Lst.insertLast(val);
     }
-    int x1=l1.count_duplicates(69);
-    l1.remove_duplicates(69);
-    l1.display();
+    char ch;
+     int ele, x;
+    do{
+        cout<<"Enter s to search for Elements,\n";
+        cout<<"Enter c to Print the number of times key is duplicated in the List,\n";
+        cout<<"Enter r to Delete Duplicate entries of Key in the List,\n";
+        cout<<"Enter i to Insert an element to a specific position in the List,\n";
+        cout<<"Enter d to Display the List,\n";
+        cout<<"Enter e to Exit the Program.\n";
+        cout<<"Enter your Choice : ";
+        cin>>ch;
+        switch (ch)
+        {
+        case 's':
+            int ele;
+            cout<<"Enter the Element to Search : ";
+            cin>>ele;
+            cout<<endl;
+            x = Lst.search(ele);
+            break;
+        case 'c':
+            cout<<"Enter the Element to find the count of Duplicates : ";
+            cin>>ele;
+            cout<<endl;
+            x = Lst.count_duplicates(ele);
+            break;
+        case 'r':
+            cout<<"Enter the Element to Delete the duplicates of : ";
+            cin>>ele;
+            cout<<endl;
+            Lst.remove_duplicates(ele);
+            break;
+        case 'i':
+            int pos;
+            cout<<"Enter the Element to be inserted : ";
+            cin>>ele;
+            cout<<"Enter the position to be inserted : ";
+            cin>>pos;
+            cout<<endl;
+            Lst.insert_pos(ele,pos);
+            break;
+        case 'd':
+            cout<<endl;
+            cout<<"The Linked List is : ";
+            Lst.display();
+            break;
+        case 'e':
+            break;        
+        default:
+            cout<<"Wrong choice!"<<endl;
+        }
+        cout<<endl<<endl;
+    }while(ch!='e');
+    cout<<"Thank You!"<<endl;
     return 0;
 }
