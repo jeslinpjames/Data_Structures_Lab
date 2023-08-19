@@ -22,7 +22,7 @@ class SingleLinkedList{
     SingleLinkedList() : size(0), Head(nullptr), Tail(nullptr) {}
     void insertFirst(int val);
     void insertLast(int val);
-    void insert(int val,int k);
+    void insert_pos(int val,int k);
     int search(int val);
     int count_duplicates(int val);
     void remove_duplicates(int val);
@@ -47,7 +47,7 @@ void SingleLinkedList::insertLast(int val){
     Tail= node;
     size++;
 }
-void SingleLinkedList:: insert(int val, int k){
+void SingleLinkedList:: insert_pos(int val, int k){
     if(k==0){
         insertFirst(val);
         return;
@@ -57,7 +57,7 @@ void SingleLinkedList:: insert(int val, int k){
         return;
     }
     if(k>size){
-        cout<<"Key is greater than the size of the Linked List!"<<endl;
+        cout<<"LIST TOO SMALL"<<endl;
         return;
     }
     Node* temp = Head;
@@ -100,30 +100,36 @@ int SingleLinkedList:: count_duplicates(int val){
         temp=temp->next;
     }
     if(not_found){
-        cout<<"Key not in the Linked List"<<endl;
+        cout<<"NO DUPLICATES"<<endl;
     }else {
         cout << "Number of duplicates for key " << val << ": " << count << endl;
     }
     return count;
 }
 void SingleLinkedList::remove_duplicates(int val){
-    bool not_found =true;
+    bool first_occured = false;
     Node* prev = nullptr;
     Node* current = Head;
     while(current!=nullptr){
         if(current->data==val){
-            if(prev!=nullptr){
-                prev->next=current->next;
-                delete current;
-                current=prev->next;
-                size--;
+            if(first_occured){
+                if(prev!=nullptr){
+                    prev->next=current->next;
+                    delete current;
+                    current=prev->next;
+                    size--;
+                }else{
+                    Node* temp = current;
+                    current = current->next;
+                    Head = current;
+                    delete temp;
+                    size--;
+                }
             }else{
-                Node* temp = current;
-                current = current->next;
-                Head = current;
-                delete temp;
-                size--;
-            }
+                first_occured=true;
+                prev=current;
+                current=current->next;
+            }                
         }else{
             prev=current;
             current=current->next;
@@ -148,7 +154,7 @@ int main(){
     l1.insertFirst(121);
     l1.insertLast(69);
     l1.insertLast(96);
-    l1.insert(11,7);
+    l1.insert_pos(11,7);
     l1.insertFirst(69);
     l1.display();
     int x= l1.search(76);
