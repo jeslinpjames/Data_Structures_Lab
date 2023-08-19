@@ -70,12 +70,16 @@ void SingleLinkedList:: insert_pos(int val, int k){
 }
 int SingleLinkedList :: search(int val){
     int position = 0;
+    int final_pos=-1;
     bool found = false;
     Node* temp = Head;
+    int* arr = new int[size];
+    int t=0;
     while(temp!=nullptr){
         if(temp->data==val){
             found=true;
-            break;
+            arr[t++]=position;
+            final_pos=position;
         }
         position++;
         temp=temp->next;
@@ -83,8 +87,14 @@ int SingleLinkedList :: search(int val){
     if(!found){
         cout<<"NOT FOUND"<<endl;
         return -1;
+    }else{
+        cout<<"Key of the element "<<val<<" in Linked list :";
+        for(int i=0;i<t;i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
     }
-    return position;
+    return final_pos;
 }
 int SingleLinkedList:: count_duplicates(int val){
     int position =0;
@@ -157,7 +167,7 @@ int main(){
     l1.insert_pos(11,7);
     l1.insertFirst(69);
     l1.display();
-    int x= l1.search(76);
+    int x= l1.search(69);
     if(x!=-1){
         cout<<"The Position of the element is "<<x<<endl;
     }
