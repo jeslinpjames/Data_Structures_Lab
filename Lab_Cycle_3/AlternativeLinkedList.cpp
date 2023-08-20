@@ -115,3 +115,12 @@ int main(){
     Alt.displayLists();    
     return 0;
 }
+
+
+
+
+// OUTPUT 
+// Enter the number of Elements in the Linked List : 9
+// Enter the Elements of the List seperated by space : 6 4 10 13 1 7 88 10 5
+// The Even List is :6->10->1->88->5-> END
+// The Odd List is :4->13->7->10-> END
