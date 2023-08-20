@@ -222,3 +222,137 @@ int main(){
     cout<<"Thank You!"<<endl;
     return 0;
 }
+
+
+
+
+// OUTPUT 
+// Enter the number of Elements in the Linked List : 6
+// Enter the Elements of the List seperated by space : 10 1 0 14 5 45
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : s
+// Enter the Element to Search : 11
+
+// NOT FOUND
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : i
+// Enter the Element to be inserted : 5
+// Enter the position to be inserted : 6
+
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : d
+
+// The Linked List is : 10->1->0->14->5->45->5-> END
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : s
+// Enter the Element to Search : 5
+
+// Key of the element 5 in Linked list :4 6
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : i
+// Enter the Element to be inserted : 50
+// Enter the position to be inserted : 9
+
+// LIST TOO SMALL
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : i
+// Enter the Element to be inserted : 5
+// Enter the position to be inserted : 2
+
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : d
+
+// The Linked List is : 10->1->5->0->14->5->45->5-> END
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : c
+// Enter the Element to find the count of Duplicates : 5
+
+// Number of duplicates for key 5: 2
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : r
+// Enter the Element to Delete the duplicates of : 5
+
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : d
+
+// The Linked List is : 10->1->5->0->14->45-> END
+
+
+// Enter s to search for Elements,
+// Enter c to Print the number of times key is duplicated in the List,
+// Enter r to Delete Duplicate entries of Key in the List,
+// Enter i to Insert an element to a specific position in the List,
+// Enter d to Display the List,
+// Enter e to Exit the Program.
+// Enter your Choice : e
+
+
+// Thank You!
