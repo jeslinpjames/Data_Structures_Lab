@@ -9,16 +9,22 @@ class Mat {
     r = x;
     c = y;
     if ((r > 0) && (c > 0)) {
-      a = new int * [r];
-      for (int i = 0; i < r; i++) {
-        a[i] = new int[c];
-      }
+        a = new int*[r];
+        for (int i = 0; i < r; i++) {
+            a[i] = new int[c];
+        }
+    }
+    else {
+        a = nullptr; 
     }
   }
   ~Mat() {
-    for (int i = 0; i < r; i++)
-      delete a[i];
-    delete a;
+    if (a != nullptr) {
+        for (int i = 0; i < r; i++) {
+            delete[] a[i];
+        }
+        delete[] a;
+    }
   }
   int* row_sum();
   int* column_sum();
@@ -26,23 +32,27 @@ class Mat {
   int max(int ar[],int size);
 };
 int* Mat::column_sum() {
-    int * S = new int [r];
-    for (int i=0;i<r; i++){
-        for(int j =0;j<c;j++){
-            S[i]=S[i]+a[j][i];
+    int *S = new int[c];
+    for (int i = 0; i < c; i++) {  
+        S[i] = 0; 
+        for (int j = 0; j < r; j++) {  
+            S[i] += a[j][i];
         }
     }
-    return S;  
+    return S;
 }
+
 int* Mat::row_sum() {
-    int * S = new int [c];
-    for (int i=0;i<c; i++){
-        for(int j =0;j<r;j++){
-            S[i]=S[i]+a[i][j];
+    int *S = new int[r];
+    for (int i = 0; i < r; i++) {  
+        S[i] = 0; 
+        for (int j = 0; j < c; j++) {  
+            S[i] += a[i][j];
         }
     }
-    return S;  
+    return S;
 }
+
 void Mat::accept_elements() {
   for (int i = 0; i < r; i++) {
     cout << "Enter " << c << " elements of " << i + 1 << " row : ";
@@ -83,3 +93,4 @@ int main() {
 // Enter 3 elements of 3 row : 3 2 1
 // The column number with maximum sum is : 1
 // The row number with maximum sum is :1
+
