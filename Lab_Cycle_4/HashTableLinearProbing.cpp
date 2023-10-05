@@ -3,66 +3,67 @@
 #include<iostream>
 using namespace std;
 
-
 const int TABLE_SIZE = 10;
 
-class HashMap{
-    private:
-        int *table;
-        int size;
-    public:
-        HashMap(){
-            table = new int[TABLE_SIZE];
-            size = 0;
-            for(int i=0;i<TABLE_SIZE;i++){
-                table[i] = -1;
-            }
+class HashMap {
+private:
+    int* table;
+    int size;
+
+public:
+    HashMap() {
+        table = new int[TABLE_SIZE];
+        size = 0;
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            table[i] = -1;
         }
-        ~HashMap(){
-            delete[] table;
+    }
+
+    ~HashMap() {
+        delete[] table;
+    }
+
+    int hash(int key) {
+        return key % TABLE_SIZE;
+    }
+
+    void insert(int key) {
+        int index = hash(key);
+        while (table[index] != -1) {
+            index = (index + 1) % TABLE_SIZE;
         }
-        int hash(int key) {
-            return key % TABLE_SIZE;
+        table[index] = key;
+        size++;
+    }
+
+    void remove(int key) {
+        int index = hash(key);
+        while (table[index] != key && table[index] != -1) {
+            index = (index + 1) % TABLE_SIZE;
         }
-        void insert(int key){
-            int index = hash(key);
-            while(table[index]!=-1){
-                index = (index+1)%TABLE_SIZE;
-            }
-            table[index] = key;
-            size++;
+        if (table[index] == key) {
+            table[index] = -1;
+            size--;
+        } else {
+            cout << "Key not found: " << key << endl;
         }
-        void remove(int key){
-            int index = hash(key);
-            while(table[index]!=key&& table[index]!=-1){
-                index = (index+1)%size;
-            }
-            if(table[index]==key){
-                table[index] = -1;
-                size--;
-            }else{
-                cout<<"Key not found"<<key<<endl;
-            }
+    }
+
+    bool search(int key) {
+        int index = hash(key);
+        while (table[index] != key && table[index] != -1) {
+            index = (index + 1) % TABLE_SIZE;
         }
-        bool search(int key){
-            int index = hash(key);
-            while(table[index]!=key&& table[index]!=-1){
-                index = (index+1)%size;
-            }
-            if(table[index]==key){
-                return true;
-            }
-            else{ 
-                return false;
-            }
+        return table[index] == key;
+    }
+
+    void display() {
+        for (int i = 0; i < TABLE_SIZE; i++) {
+            if (table[i] != -1)
+                cout << table[i] << " ";
         }
-        void display(){
-            for(int i=0;i<size;i++){
-                if(table[i]!=-1)
-                    cout<<table[i]<<" ";   
-            }
-            cout<<endl;
-        }
+        cout << endl;
+    }
 };
 
 int main() {
