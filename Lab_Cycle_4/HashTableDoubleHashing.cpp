@@ -1,5 +1,5 @@
-// Implement a hash table with quadratic probing using array with the following operations
-// :INSERT(key), DELETE(key), SEARCH(key)
+// Implement a hash table with double hashing using array with the following operations :
+// INSERT(key), DELETE(key), SEARCH(key).
 #include<iostream>
 using namespace std;
 
@@ -24,7 +24,9 @@ public:
     }
 
     int hash(int key,int attempt) {
-        return (key + attempt*attempt) % TABLE_SIZE;
+        int index = (key%TABLE_SIZE);
+        int step = 7 - (key%7);
+        return (index + attempt*step) % TABLE_SIZE;
     }
 
     void insert(int key) {
@@ -94,7 +96,6 @@ int main() {
 
     return 0;
 }
-
 
 
 // HashTable contents:
