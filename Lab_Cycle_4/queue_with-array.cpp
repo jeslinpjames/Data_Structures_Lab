@@ -29,7 +29,7 @@ class Queue{
             }
         }
         int getSize(){
-            return this->currentSize;
+            return this->currentSize+1;
         }
         void enqueue(int data){
             if (this->currentSize==Capacity){
@@ -41,19 +41,54 @@ class Queue{
                 this->currentSize++;
             }
         }
-        int dequeue(){
-            if(this->currentSize == 0){
-                cout<<"Queue is empty"<<endl;
-                return -1;
-            }
-            else{
-                int data = this->arr[this->front];  
-                this->front = (this->front+1)%Capacity;
-                this->currentSize--;
-                return data;
-            }
+        
+    int dequeue() {
+        if (isEmpty()) {
+            cout << "Queue is empty" << endl;
+            return -1;
         }
+
+        int data = arr[front];
+        front = (front + 1) % Capacity;
+        currentSize--;
+
+        if (isEmpty()) {
+            front = 0;
+            rear = -1;
+        }
+
+        return data;
+    }
 };
 int main(){
-    
+    Queue *queue = new Queue(5);
+    queue->enqueue(10);
+    queue->enqueue(20);
+    queue->enqueue(30);
+    queue->enqueue(40);
+    queue->enqueue(50);
+    queue->enqueue(60);
+    cout<<"Size of queue is "<<queue->getSize()<<endl;
+    cout<<queue->dequeue()<<endl;
+    cout<<queue->dequeue()<<endl;
+    cout<<queue->dequeue()<<endl;
+    cout<<queue->dequeue()<<endl;
+    cout<<queue->dequeue()<<endl;
+    if(queue->isEmpty()){
+        cout<<"Queue is empty"<<endl;
+    }
+    else{
+        cout<<"Queue is not empty"<<endl;
+    }
+    return 0;
 }
+
+
+// Queue is full
+// Size of queue is 6
+// 10
+// 20
+// 30
+// 40
+// 50
+// Queue is empty
