@@ -1,5 +1,3 @@
-// Implement a hash table with quadratic probing using array with the following operations
-// :INSERT(key), DELETE(key), SEARCH(key)
 #include<iostream>
 using namespace std;
 
@@ -94,13 +92,3 @@ int main() {
 
     return 0;
 }
-
-
-
-// HashTable contents:
-// 15 35 5 25 
-// Searching for key 15: Found
-// Searching for key 20: Not Found
-// Key not found: 20
-// HashTable contents after removal:
-// 35 5 25 

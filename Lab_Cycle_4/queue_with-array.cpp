@@ -1,5 +1,3 @@
-// Implement a queue using array with the following operations : ENQUEUE, DEQUEUE,
-// ISEMPTY, SIZE()
 #include<iostream>
 using namespace std;
 class Queue{
@@ -84,11 +82,3 @@ int main(){
 }
 
 
-// Queue is full
-// Size of queue is 6
-// 10
-// 20
-// 30
-// 40
-// 50
-// Queue is empty

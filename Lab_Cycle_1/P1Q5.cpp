@@ -18,5 +18,3 @@ int main(){
     cout<<"The binary representation of "<<n<<" is "<<b<<endl;
     return 0;
 }
-// Enter the number : 15
-// The binary representation of 15 is 1111

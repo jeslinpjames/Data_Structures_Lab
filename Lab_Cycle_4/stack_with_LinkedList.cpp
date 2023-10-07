@@ -1,5 +1,3 @@
-// Implement a stack using Linked List with the following operations : PUSH, POP, ISEMPTY,
-// SIZE()
 #include<iostream>
 using namespace std;
 class Node{
@@ -67,8 +65,3 @@ int main(){
     cout<<"Popped element is "<<stack->pop()<<endl;
     return 0;
 }
-
-// Size of stack is 4
-// Popped element is 40
-// Popped element is 30
-// Popped element is 20

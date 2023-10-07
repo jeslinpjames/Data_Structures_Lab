@@ -1,5 +1,3 @@
-// Implement a hash table using Linked List with separate chaining with the following
-// operations : INSERT(key), DELETE(key), SEARCH(key).
 #include<iostream>
 using namespace std;
 const int TABLE_SIZE = 10;
@@ -127,29 +125,3 @@ int main() {
     return 0;
 }
 
-
-
-// HashTable contents:
-// Bucket 0 : 10
-// Bucket 1 : 11 1
-// Bucket 2 : 12 2
-// Bucket 3 : 13 3
-// Bucket 4 : 14 4
-// Bucket 5 : 5 65 5 35 25 15 5
-// Bucket 6 : 16 6 16 6
-// Bucket 7 : 17 7 7
-// Bucket 8 : 18 8
-// Bucket 9 : 9 69
-// Searching for key 15: Found
-// Searching for key 20: Not Found
-// HashTable contents after removal:
-// Bucket 0 : 10
-// Bucket 1 : 11 1
-// Bucket 2 : 12 2
-// Bucket 3 : 13 3
-// Bucket 4 : 14 4
-// Bucket 5 : 5 65 5 35 25 5
-// Bucket 6 : 16 6 16 6
-// Bucket 7 : 17 7 7
-// Bucket 8 : 18 8 
-// Bucket 9 : 9 69

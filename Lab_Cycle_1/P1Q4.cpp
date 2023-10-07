@@ -21,5 +21,3 @@ int main(){
     }
     return 0;
 }
-// Enter the string : dogeeseseegod
-// The string dogeeseseegod is palindrome.

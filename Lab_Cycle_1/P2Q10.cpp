@@ -86,11 +86,3 @@ int main() {
   cout<<"The row number with maximum sum is :"<<max_row+1<<endl;
   return 0;
 }
-// Enter the number of rows and columns of the matrix : 3 3
-// Enter the values of the matrix:
-// Enter 3 elements of 1 row : 9 8 7
-// Enter 3 elements of 2 row : 6 5 4
-// Enter 3 elements of 3 row : 3 2 1
-// The column number with maximum sum is : 1
-// The row number with maximum sum is :1
-

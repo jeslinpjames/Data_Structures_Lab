@@ -13,6 +13,3 @@ int main(){
     cout<<"Sum of digits of "<<n<<" is "<<sumofDigits(n)<<endl;
     return 0; 
 }
-
-// Enter the value of N : 123
-// Sum of digits of 123 is 6

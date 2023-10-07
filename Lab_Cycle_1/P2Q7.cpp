@@ -29,7 +29,3 @@ int  main(){
     cout<<"The array doesnt have 2 elements "<<endl;
     return 0;
 }
-
-// Enter the size of the array  : 5
-// Enter the Elements of the array : 11 22 33 44 55
-// The second largest element of the array is : 44

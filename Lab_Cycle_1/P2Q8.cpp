@@ -29,6 +29,3 @@ int main(){
 }
 
 
-// Enter the size of the character array : 10
-// Enter the Character array : helloworld
-// The number of duplicate Elements in the character array is :2

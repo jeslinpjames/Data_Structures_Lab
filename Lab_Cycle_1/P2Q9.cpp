@@ -63,7 +63,3 @@ int main(){
 
 }
 
-// Enter the size of the two arrays : 5
-// Enter the first sorted array : 2 4 6 8 10
-// Enter the second sorted array : 1 3 5 7 9
-// The merged array is : 10 9 8 7 6 5 4 3 2 1

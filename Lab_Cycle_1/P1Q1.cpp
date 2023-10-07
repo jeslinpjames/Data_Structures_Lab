@@ -14,5 +14,3 @@ int main(){
     return 0; 
 }
 
-// Enter the value of N : 6
-// Factorial of 6 is 720

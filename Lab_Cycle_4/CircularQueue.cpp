@@ -1,5 +1,3 @@
-// Implement a circular queue using array with the following operations : ENQUEUE,
-// DEQUEUE, ISEMPTY, SIZE()
 #include<iostream>
 using namespace std;   
 class CircularQueue{
@@ -85,14 +83,3 @@ int main(){
     return 0;
 }
 
-// Size of queue is 5
-// Dequeue: 10
-// Dequeue: 20
-// Size of queue is 3
-// Size of queue is 5
-// Dequeue: 30
-// Dequeue: 40
-// Dequeue: 50
-// Dequeue: 60
-// Dequeue: 70
-// Size of queue is 0

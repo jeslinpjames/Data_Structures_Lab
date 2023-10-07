@@ -19,5 +19,3 @@ int main(){
     cout<<endl;
     return 0;
 }
-// Enter the String : Helloworld
-// The reverse of Helloworld is : dlrowolleH

@@ -1,5 +1,3 @@
-// Implement a stack using array with the following operations : PUSH, POP, ISEMPTY,
-// SIZE()
 #include<iostream>
 using namespace std;
 class Stack{
@@ -58,11 +56,3 @@ int main(){
         cout<<"Stack is not empty"<<endl;
     return 0;
 }
-
-
-
-
-
-// 40
-// 3
-// Stack is not empty

@@ -200,11 +200,3 @@ int main(){
 }
 
 
-
-
-// OUTPUT 
-// Enter the number of Elements in the Single Linked List : 9
-// Enter the Elements of the List seperated by space :  6 4 10 13 1 7 88 10 5
-// The Single Linked List converted into Double Linked List.
-// The Double Linked list from Head to Tail : 6<->4<->10<->13<->1<->7<->88<->10<->5<-> END
-// The Double Linked List from Tail to Head : 5<->10<->88<->7<->1<->13<->10<->4<->6<-> END
